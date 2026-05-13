@@ -1,0 +1,35 @@
+@media (max-width: 900px) {
+  .start-page { padding-bottom: 48px; }
+  .search-widget { margin-top: 30vh; }
+}
+
+@media (max-width: 620px) {
+  .weather-widget { top: 21px; left: 20px; }
+  .settings-button, .widget-edit-button, .add-plugin-button { top: 21px; right: 20px; }
+  .widget-edit-button { right: 68px; }
+  .add-plugin-button { right: 116px; }
+  .settings-panel { top: 68px; right: 16px; }
+  .widget-inspector-panel { top: 68px; right: 16px; width: min(300px, calc(100vw - 32px)); }
+  .plugin-library-panel { width: min(300px, 92vw); }
+  .font-library-list { grid-template-columns: 1fr; }
+  .quote-widget { bottom: 24px; left: 20px; width: min(260px, calc(100vw - 40px)); }
+  .stocks-widget { top: 116px; right: 20px; width: min(260px, calc(100vw - 40px)); }
+  .weather-temp { font-size: 18px; }
+  .weather-text { font-size: 11px; }
+  .time-panel { top: 8vh; }
+  .search-widget { margin-top: 28vh; }
+  .search-bar {
+    grid-template-columns: 23px 1fr 1px auto 36px;
+    min-height: 58px;
+    padding: 0 10px 0 18px;
+  }
+  .search-bar input { padding: 0 12px; font-size: 15px; }
+  .primary-target { max-width: 58px; padding: 0 6px; font-size: 12px; }
+  .provider-dock, .shortcuts-panel { width: min(100%, calc(100vw - 24px)); }
+  .shortcut-form { grid-template-columns: 1fr; }
+  .shortcut-form button { min-height: 38px; }
+  .shortcuts-grid { gap: 16px 12px; }
+  .shortcut-button { width: 52px; height: 52px; border-radius: 16px; }
+  .shortcut-icon { width: 24px; height: 24px; }
+  .shortcut-label { font-size: 12px; }
+}

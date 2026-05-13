@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 聚合起始页</title>
+</head>
+<body>
+  <main class="start-page">
+    <section class="weather-widget" aria-label="天气">
+      <svg class="weather-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="32" cy="14" r="5" fill="#f2bd3a" />
+        <path d="M35 28.5c0-5.2-4.2-9.5-9.5-9.5-4.2 0-7.8 2.8-9 6.6A7 7 0 0 0 17 39h17a5.3 5.3 0 0 0 1-10.5Z" fill="rgba(255,255,255,.72)" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+      </svg>
+      <div class="weather-copy">
+        <div id="weatherTemp" class="weather-temp">24°</div>
+        <div id="weatherText" class="weather-text">多云&nbsp;&nbsp;空气优</div>
+      </div>
+    </section>
+
+    <button id="settingsButton" class="settings-button" type="button" aria-label="设置" title="设置">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 4 6 9v14l10 5 10-5V9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+        <circle cx="16" cy="16" r="3.5" stroke="currentColor" stroke-width="2" />
+      </svg>
+    </button>
+    <button id="widgetEditButton" class="widget-edit-button" type="button" aria-label="编辑插件" title="编辑插件">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="5" y="6" width="9" height="8" rx="2" stroke="currentColor" stroke-width="2" />
+        <rect x="18" y="5" width="9" height="11" rx="2" stroke="currentColor" stroke-width="2" />
+        <rect x="5" y="18" width="10" height="9" rx="2" stroke="currentColor" stroke-width="2" />
+        <rect x="19" y="20" width="8" height="7" rx="2" stroke="currentColor" stroke-width="2" />
+      </svg>
+    </button>
+    <button id="addPluginButton" class="add-plugin-button" type="button" aria-label="添加插件" title="添加插件">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 7v18M7 16h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+      </svg>
+    </button>
+    <aside id="pluginLibraryPanel" class="plugin-library-panel hidden" aria-label="插件库">
+      <div class="plugin-library-heading">
+        <span>插件库</span>
+        <button id="closePluginLibraryButton" type="button" aria-label="关闭插件库">×</button>
+      </div>
+      <div class="settings-row">
+        <button id="resetWidgetsButton" type="button">重置布局</button>
+      </div>
+      <div class="plugin-library-list">
+        <button class="plugin-library-item" type="button" data-widget-toggle="weather">
+          <span>天气</span><span data-widget-status-for="weather"></span>
+        </button>
+        <button class="plugin-library-item" type="button" data-widget-toggle="time">
+          <span>时间</span><span data-widget-status-for="time"></span>
+        </button>
+        <button class="plugin-library-item" type="button" data-widget-toggle="date">
+          <span>日期</span><span data-widget-status-for="date"></span>
+        </button>
+        <button class="plugin-library-item" type="button" data-widget-toggle="quote">
+          <span>每日金句</span><span data-widget-status-for="quote"></span>
+        </button>
+        <button class="plugin-library-item" type="button" data-widget-toggle="stocks">
+          <span>自选股</span><span data-widget-status-for="stocks"></span>
+        </button>
+        <button class="plugin-library-item" type="button" data-widget-toggle="notes">
+          <span>便签</span><span data-widget-status-for="notes"></span>
+        </button>
+        <button class="plugin-library-item" type="button" data-widget-toggle="search">
+          <span>搜索框</span><span data-widget-status-for="search"></span>
+        </button>
+        <button class="plugin-library-item" type="button" data-widget-toggle="shortcuts">
+          <span>快捷访问</span><span data-widget-status-for="shortcuts"></span>
+        </button>
+      </div>
+    </aside>
+
+    <aside id="widgetInspectorPanel" class="widget-inspector-panel hidden" aria-label="插件设置">
+      <div class="plugin-library-heading">
+        <span id="widgetInspectorTitle">插件设置</span>
+        <button id="closeWidgetInspectorButton" type="button" aria-label="关闭插件设置">×</button>
+      </div>
+      <div class="widget-inspector-body">
+        <button id="widgetStyleButton" type="button">切换样式</button>
+        <label class="widget-bg-field">
+          <span>颜色</span>
+          <input id="widgetBgColorInput" type="color" />
+        </label>
+        <label class="widget-bg-field">
+          <span>透明度 <output id="widgetBgOpacityValue">28%</output></span>
+          <input id="widgetBgOpacityInput" type="range" min="0" max="100" step="1" />
+        </label>
+        <label class="settings-field">
+          <span>字体</span>
+          <select id="widgetFontSelect"></select>
+        </label>
+        <div class="settings-row">
+          <button id="resetWidgetBgButton" type="button">重置背景</button>
+          <button id="hideSelectedWidgetButton" type="button">隐藏</button>
+        </div>
+      </div>
+    </aside>
+
+    <section class="settings-panel hidden" id="settingsPanel" aria-label="起始页设置">
+      <div class="settings-heading">
+        <span>设置</span>
+        <button id="closeSettingsButton" type="button" aria-label="关闭设置">×</button>
+      </div>
+      <label class="settings-field">
+        <span>背景图片 URL</span>
+        <input id="backgroundUrlInput" type="url" placeholder="https://example.com/image.jpg" />
+      </label>
+      <div class="settings-row">
+        <button id="saveBackgroundButton" type="button">应用背景</button>
+        <button id="resetBackgroundButton" type="button">恢复默认</button>
+      </div>
+      <div class="skin-presets" aria-label="背景预设">
+        <button class="skin-preset skin-preset-default" type="button" data-skin="default" aria-label="默认背景"></button>
+        <button class="skin-preset skin-preset-orbit" type="button" data-skin="orbit" aria-label="轨道背景"></button>
+        <button class="skin-preset skin-preset-garden" type="button" data-skin="garden" aria-label="花园背景"></button>
+        <button class="skin-preset skin-preset-night" type="button" data-skin="night" aria-label="夜色背景"></button>
+      </div>
+      <label class="settings-field">
+        <span>天气城市</span>
+        <input id="weatherCityInput" type="text" placeholder="例如 北京、上海" />
+      </label>
+      <div class="settings-row">
+        <button id="saveWeatherButton" type="button">更新天气</button>
+      </div>
+      <div class="settings-grid">
+        <label class="settings-check"><input id="showSecondsInput" type="checkbox" />显示秒</label>
+        <label class="settings-check"><input id="use12HourInput" type="checkbox" />12 小时制</label>
+        <label class="settings-check"><input id="hideDateInput" type="checkbox" />隐藏日期</label>
+      </div>
+      <label class="settings-field">
+        <span>日期格式</span>
+        <select id="dateFormatSelect">
+          <option value="zh">4月28日 星期二</option>
+          <option value="iso">2026-04-28</option>
+          <option value="weekday">星期二</option>
+        </select>
+      </label>
+      <div class="settings-subheading">字体库</div>
+      <label class="settings-field">
+        <span>中文默认字体</span>
+        <select id="defaultChineseFontSelect"></select>
+      </label>
+      <label class="settings-field">
+        <span>英文数字默认字体</span>
+        <select id="defaultEnglishFontSelect"></select>
+      </label>
+      <label class="settings-field">
+        <span>自定义字体名称</span>
+        <input id="customFontInput" type="text" placeholder="输入已安装字体名，例如 OPPO Sans" />
+      </label>
+      <div class="settings-row">
+        <button id="saveCustomFontButton" type="button">应用自定义</button>
+        <button id="resetWidgetFontsButton" type="button">重置插件字体</button>
+      </div>
+      <div id="fontLibraryList" class="font-library-list" aria-label="可选字体库"></div>
+    </section>
+
+    <section class="time-panel" aria-label="当前时间">
+      <div id="timeText" class="time-text">09:42</div>
+      <div class="time-divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="date-panel" aria-label="当前日期">
+      <div id="dateText" class="date-text">5月20日&nbsp;&nbsp;星期二</div>
+    </section>
+
+    <section class="quote-widget" aria-label="每日金句">
+      <blockquote id="dailyQuoteText" class="daily-quote-text">把注意力放回今天能做好的事。</blockquote>
+    </section>
+
+    <section class="stocks-widget" aria-label="自选股">
+      <div class="widget-section-heading">
+        <span>自选股</span>
+        <button id="refreshStocksButton" class="mini-icon-button" type="button" aria-label="刷新自选股">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M25 9v7h-7M7 23v-7h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M23.3 14A8 8 0 0 0 9.8 9.4M8.7 18a8 8 0 0 0 13.5 4.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <form id="stockForm" class="stock-form">
+        <input id="stockSymbolInput" type="text" placeholder="AAPL / 0700.HK" autocomplete="off" />
+        <button type="submit">添加</button>
+      </form>
+      <div id="stocksList" class="stocks-list"></div>
+    </section>
+
+    <section class="notes-widget" aria-label="便签">
+      <textarea id="notesTextInput" class="notes-text-input" placeholder="写点什么..." spellcheck="false"></textarea>
+    </section>
+
+    <section class="search-widget" aria-label="搜索插件">
+      <form id="searchForm" class="search-bar" aria-label="聚合搜索">
+        <svg class="search-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="8.5" stroke="currentColor" stroke-width="2.6" />
+          <path d="m20.5 20.5 6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+        </svg>
+        <input id="queryInput" type="text" placeholder="搜索你想了解的一切" autofocus autocomplete="off" />
+        <span class="search-divider" aria-hidden="true"></span>
+        <span id="primaryTargetText" class="primary-target">Google</span>
+        <button id="searchButton" class="spark-button" type="submit" aria-label="开始搜索">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M5 16h20M17 8l8 8-8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </form>
+
+      <div class="search-actions">
+        <button id="askAiButton" type="button" class="mode-button">问 AI</button>
+        <button id="searchEngineButton" type="button" class="mode-button active">去搜索</button>
+      </div>
+
+      <div id="providerDock" class="provider-dock hidden" aria-label="搜索目标">
+        <label class="provider-select-all">
+          <input id="selectAllProvidersInput" type="checkbox" />
+          <span id="selectAllProvidersText">全选</span>
+        </label>
+        <div id="providersList" class="providers-list"></div>
+      </div>
+    </section>
+
+    <section class="shortcuts-panel" aria-label="快捷访问管理">
+      <button id="showShortcutFormButton" type="button" class="add-shortcut-button" aria-label="添加快捷访问">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 8v16M8 16h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+        </svg>
+      </button>
+      <form id="shortcutForm" class="shortcut-form hidden">
+        <input id="shortcutNameInput" type="text" placeholder="名称，例如 Notion" />
+        <input id="shortcutUrlInput" type="url" placeholder="网址，例如 https://notion.so" />
+        <button type="submit">保存</button>
+      </form>
+      <nav id="shortcutsGrid" class="shortcuts-grid" aria-label="快捷访问"></nav>
+      <p id="emptyShortcutsText" class="empty-text">还没有快捷访问，添加你常用的网站。</p>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

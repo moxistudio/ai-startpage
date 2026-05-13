@@ -1,0 +1,32 @@
+body[data-skin="orbit"] {
+  background:
+    radial-gradient(circle at 73% 42%, rgba(255, 255, 255, 0.9) 0 5rem, rgba(196, 207, 218, 0.48) 5.2rem 5.5rem, transparent 5.7rem),
+    radial-gradient(circle at 16% 78%, rgba(255, 213, 146, 0.82) 0 7rem, transparent 19rem),
+    radial-gradient(circle at 88% 20%, rgba(136, 166, 197, 0.45) 0 8rem, transparent 25rem),
+    linear-gradient(126deg, rgba(248, 247, 242, 0.94), rgba(232, 237, 240, 0.9) 52%, rgba(246, 232, 206, 0.9));
+}
+
+body[data-skin="garden"] {
+  background:
+    radial-gradient(ellipse at 9% 18%, rgba(185, 214, 177, 0.7) 0 8rem, transparent 20rem),
+    radial-gradient(ellipse at 86% 78%, rgba(255, 210, 170, 0.82) 0 9rem, transparent 24rem),
+    linear-gradient(130deg, rgba(248, 246, 235, 0.96), rgba(230, 239, 226, 0.92) 45%, rgba(238, 231, 220, 0.92));
+}
+
+body[data-skin="night"] {
+  color: #eef2f6;
+  --clock-color: rgba(239, 243, 255, 0.88);
+  --clock-date-color: rgba(239, 243, 255, 0.78);
+  --clock-glow: rgba(112, 132, 184, 0.28);
+  background:
+    radial-gradient(circle at 15% 78%, rgba(92, 119, 157, 0.46) 0 10rem, transparent 25rem),
+    radial-gradient(circle at 86% 18%, rgba(255, 214, 154, 0.42) 0 7rem, transparent 20rem),
+    linear-gradient(132deg, #151923 0%, #232935 52%, #413f44 100%);
+}
+
+body[data-skin="night"]::before, body[data-skin="night"]::after { opacity: 0.36; }
+
+.skin-preset-default { --skin-preview: linear-gradient(116deg, #fff6e6, #f5f4f0 45%, #e8e9eb); }
+.skin-preset-orbit { --skin-preview: radial-gradient(circle at 72% 38%, #fff 0 18%, #c4cfda 19% 23%, transparent 25%), linear-gradient(126deg, #f8f7f2, #e8eef2 52%, #f6e8ce); }
+.skin-preset-garden { --skin-preview: radial-gradient(circle at 12% 24%, #b9d6b1 0 24%, transparent 27%), linear-gradient(130deg, #f8f6eb, #e6efe2 45%, #eee7dc); }
+.skin-preset-night { --skin-preview: radial-gradient(circle at 84% 20%, #ffd69a 0 18%, transparent 23%), linear-gradient(132deg, #151923, #232935 52%, #413f44); }

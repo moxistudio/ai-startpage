@@ -1,0 +1,86 @@
+.plugin-library-panel, .widget-inspector-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  width: min(320px, 88vw);
+  height: 100vh;
+  overflow: auto;
+  padding: 28px 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 18px 48px rgba(117, 112, 104, 0.18);
+  backdrop-filter: blur(24px);
+}
+
+.plugin-library-panel.hidden, .widget-inspector-panel.hidden { display: none; }
+
+.widget-inspector-panel {
+  top: 88px;
+  right: 5.4vw;
+  z-index: 45;
+  width: min(300px, calc(100vw - 32px));
+  height: auto;
+  max-height: calc(100vh - 112px);
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 24px;
+}
+
+.widget-inspector-body {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.widget-inspector-body > button, .widget-inspector-body .settings-row button {
+  min-height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 999px;
+  color: #343840;
+  background: rgba(255, 255, 255, 0.46);
+}
+
+.widget-inspector-body button:disabled, .widget-inspector-body input:disabled, .widget-inspector-body select:disabled { opacity: 0.48; }
+
+.plugin-library-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #343840;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.plugin-library-heading button {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #343840;
+  background: rgba(255, 255, 255, 0.46);
+}
+
+.plugin-library-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.plugin-library-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
+  padding: 0 12px;
+  color: #343840;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.plugin-library-item span:last-child { color: #8a8e96; font-size: 12px; }
+.plugin-library-item.active { background: rgba(255, 255, 255, 0.72); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.78); }
+.plugin-library-item.active span:last-child { color: #2f7d52; }

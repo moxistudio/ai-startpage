@@ -1,0 +1,141 @@
+.shortcuts-panel {
+  align-self: start;
+  justify-self: center;
+  margin-top: 12px;
+}
+
+.add-shortcut-button {
+  display: grid;
+  width: clamp(54px, 4.6vw, 66px);
+  height: clamp(54px, 4.6vw, 66px);
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 50%;
+  color: #343840;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.32));
+  box-shadow: 0 10px 22px rgba(117, 112, 104, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.78);
+}
+
+.add-shortcut-button svg { width: 24px; height: 24px; }
+.add-shortcut-button:hover, .add-shortcut-button:focus-visible { background: rgba(255, 255, 255, 0.74); transform: translateY(-3px); }
+
+.shortcut-form {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(180px, 2fr) auto;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.shortcut-form.hidden { display: none; }
+
+.shortcut-form input {
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  outline: 0;
+  padding: 0 14px;
+  color: #2d3035;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.shortcut-form input:focus { border-color: rgba(52, 56, 64, 0.28); box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.38); }
+.shortcut-form button { padding: 0 16px; }
+
+.shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+  gap: clamp(10px, 1.6vw, 18px);
+  margin-top: 14px;
+}
+
+.shortcut-card {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  color: #36393f;
+  text-decoration: none;
+}
+
+.reorder-enabled .shortcut-card { cursor: grab; }
+.shortcut-card.dragging-shortcut { opacity: 0.45; }
+
+.shortcut-card.drag-over .shortcut-button {
+  box-shadow: 0 0 0 3px rgba(52, 56, 64, 0.28), 0 18px 34px rgba(117, 112, 104, 0.18);
+  transform: translateY(-4px) scale(1.04);
+}
+
+.shortcut-button {
+  display: grid;
+  width: clamp(54px, 4.6vw, 66px);
+  height: clamp(54px, 4.6vw, 66px);
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.42));
+  box-shadow: 0 10px 22px rgba(117, 112, 104, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.shortcut-card:hover .shortcut-button, .shortcut-card:focus-visible .shortcut-button {
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 34px rgba(117, 112, 104, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.88);
+  transform: translateY(-3px);
+}
+
+.shortcut-icon { width: 27px; height: 27px; color: #2f3339; }
+
+.favicon-icon { width: 30px; height: 30px; border-radius: 8px; object-fit: contain; }
+
+.fallback-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: #2f3339;
+  font-weight: 700;
+}
+
+.shortcut-label {
+  max-width: 100%;
+  overflow: hidden;
+  font-family: var(--widget-font-family, var(--page-zh-font));
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shortcut-domain { display: none; }
+
+.delete-shortcut, .edit-shortcut {
+  position: absolute;
+  top: -6px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 8px 18px rgba(117, 112, 104, 0.14);
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.delete-shortcut { right: 8px; color: #8f4b4b; }
+.edit-shortcut { left: 8px; width: auto; min-width: 34px; padding: 0 7px; color: #343840; font-size: 11px; }
+
+.shortcut-card:hover .delete-shortcut, .delete-shortcut:focus-visible,
+.shortcut-card:hover .edit-shortcut, .edit-shortcut:focus-visible,
+.reorder-enabled .shortcut-card .delete-shortcut, .reorder-enabled .shortcut-card .edit-shortcut {
+  opacity: 1;
+}
+
+.empty-text {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}

@@ -1,0 +1,81 @@
+.desktop-widget[data-widget-style="1"] .search-bar,
+.desktop-widget[data-widget-style="1"].shortcuts-panel,
+.desktop-widget[data-widget-style="1"].quote-widget,
+.desktop-widget[data-widget-style="1"].date-panel,
+.desktop-widget[data-widget-style="1"].stocks-widget,
+.desktop-widget[data-widget-style="1"].notes-widget,
+.desktop-widget[data-widget-style="1"].weather-widget,
+.desktop-widget[data-widget-style="1"].time-panel {
+  border: 1px solid rgba(45, 48, 54, 0.42);
+  border-radius: 22px;
+  color: #f6f7f9;
+  background: rgba(34, 37, 42, 0.58);
+  box-shadow: 0 18px 48px rgba(22, 22, 24, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.18);
+}
+
+.desktop-widget[data-widget-style="1"].weather-widget,
+.desktop-widget[data-widget-style="1"].time-panel,
+.desktop-widget[data-widget-style="1"].date-panel { padding: 10px 14px; }
+
+.desktop-widget[data-widget-style="1"] .search-bar input,
+.desktop-widget[data-widget-style="1"] .widget-section-heading,
+.desktop-widget[data-widget-style="1"] .daily-quote-text,
+.desktop-widget[data-widget-style="1"] .notes-text-input,
+.desktop-widget[data-widget-style="1"] .stock-card,
+.desktop-widget[data-widget-style="1"] .shortcut-card,
+.desktop-widget[data-widget-style="1"].time-panel,
+.desktop-widget[data-widget-style="1"].date-panel,
+.desktop-widget[data-widget-style="1"].weather-widget,
+.desktop-widget[data-widget-style="1"] .weather-text,
+.desktop-widget[data-widget-style="1"] .date-text {
+  color: #f6f7f9;
+}
+
+.desktop-widget[data-widget-style="1"] .primary-target,
+.desktop-widget[data-widget-style="1"] .search-bar input::placeholder {
+  color: rgba(246, 247, 249, 0.58);
+}
+
+.desktop-widget[data-widget-style="2"] .search-bar,
+.desktop-widget[data-widget-style="2"].shortcuts-panel,
+.desktop-widget[data-widget-style="2"].quote-widget,
+.desktop-widget[data-widget-style="2"].date-panel,
+.desktop-widget[data-widget-style="2"].stocks-widget,
+.desktop-widget[data-widget-style="2"].notes-widget {
+  border-color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+}
+
+.desktop-widget[data-widget-style="2"].weather-widget,
+.desktop-widget[data-widget-style="2"].time-panel,
+.desktop-widget[data-widget-style="2"].date-panel {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.desktop-widget.has-custom-widget-bg .search-bar,
+.desktop-widget.has-custom-widget-bg.search-widget .provider-dock,
+.desktop-widget.has-custom-widget-bg.shortcuts-panel,
+.desktop-widget.has-custom-widget-bg.quote-widget,
+.desktop-widget.has-custom-widget-bg.date-panel,
+.desktop-widget.has-custom-widget-bg.stocks-widget,
+.desktop-widget.has-custom-widget-bg.notes-widget,
+.desktop-widget.has-custom-widget-bg.weather-widget,
+.desktop-widget.has-custom-widget-bg.time-panel {
+  border-color: var(--widget-custom-border) !important;
+  background: var(--widget-custom-bg) !important;
+  box-shadow: var(--widget-custom-shadow) !important;
+  backdrop-filter: var(--widget-custom-backdrop) !important;
+}
+
+.desktop-widget.has-custom-widget-bg.weather-widget,
+.desktop-widget.has-custom-widget-bg.time-panel {
+  padding: 10px 14px;
+  border: 1px solid var(--widget-custom-border);
+  border-radius: 20px;
+}

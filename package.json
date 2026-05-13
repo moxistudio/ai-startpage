@@ -1,0 +1,42 @@
+{
+  "name": "ai-startpage",
+  "version": "0.1.0",
+  "description": "AI 聚合起始页 — 一个可自定义的 Chrome 新标签页扩展",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "eslint src src-content --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "zip": "npm run build && node scripts/zip-release.js"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0",
+    "vitest": "^1.4.0"
+  },
+  "keywords": [
+    "chrome-extension",
+    "newtab",
+    "ai",
+    "search",
+    "productivity"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viamons/ai-startpage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/viamons/ai-startpage/issues"
+  },
+  "homepage": "https://github.com/viamons/ai-startpage#readme"
+}
