@@ -104,14 +104,9 @@ AI 服务网站内容脚本权限：
 
 ## 隐私政策 URL
 
-发布前需要把 `PRIVACY.md` 发布到一个公开页面，然后在这里填入 URL。
+在 Chrome Web Store 隐私权政策网址中填写：
 
-可选方式：
-
-- GitHub Pages
-- Notion 公开页面
-- 个人网站
-- 公开 GitHub 仓库中的 `PRIVACY.md`
+`https://github.com/moxistudio/ai-startpage/blob/main/docs/PRIVACY.md`
 
 ## 测试说明
 
@@ -140,5 +135,4 @@ AI 服务网站内容脚本权限：
 
 ## 当前可上传 ZIP
 
-`release/ai-startpage-cws-0.1.0.zip`
-
+`release/ai-startpage-cws-v0.1.0.zip`

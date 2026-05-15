@@ -27,7 +27,7 @@
 
 ### 本地安装（开发者模式）
 
-1. 下载 [最新 Release](https://github.com/viamons/ai-startpage/releases)
+1. 下载 [最新 Release](https://github.com/moxistudio/ai-startpage/releases)
 2. 解压 ZIP 文件
 3. 打开 Chrome 扩展管理页：`chrome://extensions/`
 4. 开启右上角「开发者模式」
@@ -39,7 +39,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/viamons/ai-startpage.git
+git clone https://github.com/moxistudio/ai-startpage.git
 cd ai-startpage
 
 # 安装依赖
@@ -76,7 +76,7 @@ npm run test
 - 天气数据来自 [Open-Meteo](https://open-meteo.com/)
 - 股票数据来自 [Yahoo Finance](https://finance.yahoo.com/)
 
-详细隐私政策见 [PRIVACY.md](./docs/PRIVACY.md)。
+详细隐私政策见 [PRIVACY.md](./docs/PRIVACY.md)，公开版本可访问 <https://github.com/moxistudio/ai-startpage/blob/main/docs/PRIVACY.md>。
 
 ---
 

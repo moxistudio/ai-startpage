@@ -2,9 +2,9 @@
 
 ## 前置条件
 
-- [ ] GitHub 仓库已创建并推送（用于隐私政策公开 URL）
+- [x] GitHub 仓库已创建并推送（用于隐私政策公开 URL）
 - [ ] Chrome Web Store 开发者账号已注册（$5 一次性费用）
-- [ ] ZIP 文件已构建：`release/ai-startpage-cws-v0.1.0.zip`
+- [x] ZIP 文件已构建：`release/ai-startpage-cws-v0.1.0.zip`
 
 ---
 
@@ -90,7 +90,7 @@ AI 聚合起始页会替换 Chrome 新标签页，提供一个可自定义的工
 必须先推送 GitHub 仓库，然后使用以下 URL：
 
 ```
-https://github.com/你的用户名/ai-startpage/blob/main/docs/PRIVACY.md
+https://github.com/moxistudio/ai-startpage/blob/main/docs/PRIVACY.md
 ```
 
 ### 单一用途说明
@@ -192,7 +192,7 @@ abcdefghijklmnopabcdefghijklmnop
 - [ ] ZIP 文件已生成且小于 2GB ✅（当前 12MB）
 - [ ] manifest.json 中 version 正确 ✅（0.1.0）
 - [ ] 至少 1 张 1280×800 截图 ✅（已有 2 张）
-- [ ] 隐私政策 URL 可公开访问 ⬅️ **需要先推送到 GitHub**
+- [x] 隐私政策 URL 可公开访问：`https://github.com/moxistudio/ai-startpage/blob/main/docs/PRIVACY.md`
 - [ ] 扩展名称、描述已填写
 - [ ] 权限说明已填写
 - [ ] 选择了正确的类别（Productivity）
